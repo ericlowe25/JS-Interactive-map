@@ -16,28 +16,14 @@
    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
    crossorigin=""></script>
     <style>
-    #map { 
-        height: 400px;
-        background-color: #ccc;
-    }
-    #map::before{
-        content: 'LOADING';
-        font-size: 3em;
-        text-align: center;
-        width: 100%;
-        position: absolute;
-        margin-top: 3em;
-    }
-    .leaflet-popup-content-wrapper {
-        width: 100%;
-    }
+   
   </style>
 </head>
 <body>
     <form>
         <select id="business">
-            <option value="restaurant">Restaurants</option>
             <option value="coffee">Coffee Shops</option>
+            <option value="restaurant">Restaurants</option>
             <option value="hotel">Hotels</option>
             <option value="market">Markets</option>
         </select>
