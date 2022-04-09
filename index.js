@@ -88,7 +88,6 @@ function processBusinesses(data) {
 	return businesses
 }
 
-
 // event handlers
 window.onload = async () => {
 	const coords = await getCoords()
