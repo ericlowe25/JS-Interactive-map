@@ -8,11 +8,8 @@
 
 //create a space where you will place your map.
 
-//sorting function based on criteria
-//parking/transportation; uber stops, public transportation
-
 //build leaflet map
-// map object
+
 const myMap = {
 	coordinates: [],
 	businesses: [],
@@ -25,13 +22,13 @@ const myMap = {
 		center: this.coordinates,
 		zoom: 11,
 		});
-		// add openstreetmap tiles
+		// add openstreetmap
 		L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 		attribution:
 			'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 		minZoom: '15',
 		}).addTo(this.map)
-		// create and add geolocation marker
+		// create marker
 		const marker = L.marker(this.coordinates)
 		marker
 		.addTo(this.map)
@@ -39,7 +36,7 @@ const myMap = {
 		.openPopup()
 	},
 
-	// add business markers
+	// add markers
 	addMarkers() {
 		for (var i = 0; i < this.businesses.length; i++) {
 		this.markers = L.marker([
@@ -78,7 +75,7 @@ async function getFoursquare(business) {
 	let businesses = parsedData.results
 	return businesses
 }
-// process foursquare array
+// foursquare array
 function processBusinesses(data) {
 	let businesses = data.map((element) => {
 		let location = {
@@ -93,14 +90,13 @@ function processBusinesses(data) {
 
 
 // event handlers
-// window load
 window.onload = async () => {
 	const coords = await getCoords()
 	myMap.coordinates = coords
 	myMap.buildMap()
 }
 
-// business submit button
+// submit button
 document.getElementById('submit').addEventListener('click', async (event) => {
 	event.preventDefault()
 	let business = document.getElementById('business').value

@@ -1,6 +1,6 @@
 #map { 
     height: 600px;
-    background-color: #ccc;
+    background-color: #c9b0b0;
 }
 #map::before{
     content: 'LOADING';
